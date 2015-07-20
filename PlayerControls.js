@@ -1,6 +1,3 @@
-/*
-*@author phaseshifter / http://spacepi.me
-*/
 
 THREE.PlayerControls = function ( camera, player, domElement ) {
 
@@ -134,6 +131,14 @@ THREE.PlayerControls = function ( camera, player, domElement ) {
 		scale *= zoomScale;
 
 	};
+
+	this.init = function() {
+		this.camera.position.x = this.player.position.x + 2;
+		this.camera.position.y = this.player.position.y + 2;
+		this.camera.position.z = this.player.position.x + 2;
+		
+		this.camera.lookAt( this.player.position );
+	}
 
 	this.update = function() { 
 
