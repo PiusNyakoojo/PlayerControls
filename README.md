@@ -18,6 +18,8 @@ PlayerControls enables quick and easy access to a 3rd person player controller:
 var controls = new THREE.PlayerControls( camera , player );
 ```
 
+Keep in mind that player is a mesh or group object with position.x, position.y, etc.. properties
+
 4) update controls in animate function
 ```javascript
 function animate() {
