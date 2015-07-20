@@ -24,7 +24,7 @@ body
 		init();
 		animate();
 
-		function init(){
+		function init() {
 
 			// Setup
 			container = document.getElementById( 'container' );
@@ -33,7 +33,7 @@ body
 
 			camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 1000 );
 
-			renderer = new THREE.WebGLRenderer( { alpha: true} );
+			renderer = new THREE.WebGLRenderer( { alpha: true } );
 			renderer.setSize( window.innerWidth, window.innerHeight);
 
 			// Add Objects To the Scene HERE
@@ -48,7 +48,7 @@ body
 
 			// Cube
 			var cube_geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			var cube_material = new THREE.MeshBasicMaterial( {color: 0x7777ff, wireframe: false} );
+			var cube_material = new THREE.MeshBasicMaterial( { color: 0x7777ff, wireframe: false } );
 			player = new THREE.Mesh( cube_geometry, cube_material );
 
 			player.position.x = 0;
@@ -66,16 +66,17 @@ body
 			document.body.appendChild( container );
 		}
 
-		function animate(){
+		function animate() {
 			requestAnimationFrame( animate );
+
+			controls.update();
+
 			render();
 		}
-		function render(){
+
+		function render() {
 			// Render Scene
         	renderer.clear();
-
-        	controls.update();
-
 			renderer.render( scene , camera );
 		}
 

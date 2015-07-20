@@ -133,12 +133,14 @@ THREE.PlayerControls = function ( camera, player, domElement ) {
 	};
 
 	this.init = function() {
+
 		this.camera.position.x = this.player.position.x + 2;
 		this.camera.position.y = this.player.position.y + 2;
 		this.camera.position.z = this.player.position.x + 2;
-		
+
 		this.camera.lookAt( this.player.position );
-	}
+		
+	};
 
 	this.update = function() { 
 
@@ -286,7 +288,7 @@ THREE.PlayerControls = function ( camera, player, domElement ) {
 
 	    }
 
-	}
+	};
 
 	function getAutoRotationAngle() { 
 
@@ -318,10 +320,6 @@ THREE.PlayerControls = function ( camera, player, domElement ) {
 			state = STATE.ZOOM;
 
 			zoomStart.set( event.clientX, event.clientY );
-
-		} else if ( event.button === 2 ) {
-
-			//state = STATE.PAN;
 
 		}
 
@@ -407,7 +405,7 @@ THREE.PlayerControls = function ( camera, player, domElement ) {
 
 	}
 
-	function onKeyDown( event ){
+	function onKeyDown( event ) {
 
     	event = event || window.event;
 
@@ -415,7 +413,7 @@ THREE.PlayerControls = function ( camera, player, domElement ) {
 
     }
 
-    function onKeyUp( event ){
+    function onKeyUp( event ) {
 
         event = event || window.event;
 
